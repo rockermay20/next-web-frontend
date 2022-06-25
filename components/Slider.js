@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { useEffect, useRef } from 'react'
 import styles from '../styles/Slider.module.css'
 
