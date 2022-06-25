@@ -5,7 +5,7 @@ import Header from '../../components/Header'
 import styles from '../../styles/Slug.module.css'
 import { useEffect, useRef } from 'react'
 
-const Product = ({ product, order }) => {
+const Product = ({ product }) => {
     const imgrefs = useRef([])
     const radrefs = useRef([])
     const last = useRef(0)
@@ -56,12 +56,9 @@ const Product = ({ product, order }) => {
 export async function getStaticProps({ params: { slug } }) {
     const products_res = await fetch(`${API_URL}/api/products?filters[slug][$eq]=${slug}&populate=*`)
     const found = await products_res.json()
-    const orders_res = await fetch(`${API_URL}/api/orders?populate=*`)
-    const ff = await orders_res.json()
     return {
         props: {
-            product: found.data[0],  //Because the API response for filters is an array
-            order: ff.data[0]
+            product: found.data[0]  //Because the API response for filters is an array
         }
     }
 }
