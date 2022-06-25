@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap');
+
+.menubar {
+    position: absolute;
+    right: 20px;
+    margin-top: 35px;
+    display: none;
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.topmenu {
+    position: fixed;
+    background: #35302d;
+    height: 100px;
+    width: 100%;
+    display: flex;
+}
+
+.topmenu img {
+    margin-left: 30%;
+}
+
+.topmenu ul {
+    position: absolute;
+    right: 20px;
+}
+
+.topmenu ul li {
+    line-height: 100px;
+    margin: 0 10px;
+}
+
+.topmenu ul li a {
+    color: white;
+    font-size: 18px;
+    padding: 6px 15px;
+    font-weight: 300;
+    background-color: #35302d;
+    border-radius: 3px;
+    font: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.topmenu ul li a:hover {
+    background-color: #3C3735;
+    color: white;
+    border-bottom: solid 3px #FFFF8F;
+}
+
+.logo {
+    font: 300 2em "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-align: left;
+    padding: 0;
+    margin: 30px 0 0 45px;
+}
+
+.logo a {
+    padding: 1em 0;
+    color: #DFDBD9;
+    text-decoration: none;
+    transition: .15s linear color;
+}
+
+.logo a:hover {
+    color: #fff;
+}
+
+.logo a:hover span {
+    color: #FFFF8F;
+}
+
+.logo span {
+    font-weight: 700;
+    transition: .15s linear color;
+}
+
+.mainnav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background: #35302D;
+    margin-top: 100px;
+    height: 82.7%;
+    z-index: 7;
+}
+
+.mainnav ul {
+    border-top: solid 1px #3C3735;
+}
+
+.mainnav li {
+    border-bottom: solid 1px #3C3735;
+}
+
+.mainnav a {
+    padding: 1.1em 0 1.1em 2.5em;
+    color: #DFDBD9;
+    font: 400 1.125em "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-align: left;
+}
+
+.mainnav a:hover {
+    color: #fff;
+}
+
+
+.unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.unstyled a {
+    text-decoration: none;
+}
+
+.listhoverslide li {
+    position: relative;
+    overflow: hidden;
+}
+
+.listhoverslide a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: .35s ease color;
+}
+
+.listhoverslide a:before {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    z-index: -1;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 2px #FFFF8F;
+    background: #3C3735;
+    transition: .35s ease left;
+}
+
+.listhoverslide a.is-current:before,
+.listhoverslide a:hover:before {
+    left: 0;
+}
+
+.list2 {
+    padding: 1.1em 0;
+    color: #DFDBD9;
+    font: 400 1.125em "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-align: left;
+    background: #3C3735;
+}
+
+.list2 span {
+    padding: 5px;
+}
+
+.xd {
+    display: none;
+    cursor: pointer;
+}
+
+.social {
+    margin-top: 42.5%;
+    width: 300px;
+    min-height: 270px;
+    font-size: 20px;
+}
+
+.social a {
+    display: inline-block;
+    padding: 6.5%;
+    cursor: pointer;
+}
+
+.social .goo:hover {
+    background-color: #dc4e41;
+}
+.social .gma:hover {
+    background-color: #ea4335;
+}
+.social .hma:hover {
+    background-color: #0072c6;
+}
+.social .tel:hover {
+    background-color: #00405d;
+}
+.social .was:hover {
+    background-color: #25D366;
+}
+
+@media screen and (max-width:650px) {
+    .menubar {
+        display: block;
+    }
+
+    .topmenu ul {
+        display: none;
+    }
+
+    .mainnav {
+        left: -100%;
+        width: 100%;
+    }
+
+    .mainnav a {
+        text-align: center;
+        padding: 1.1em 0;
+    }
+
+    .xd {
+        display: block;
+    }
+
+    .listhoverslide a:before {
+        content: '';
+        display: block;
+        border-bottom: #fff;
+        background: #35302d;
+    }
+
+    .list2 {
+        text-align: center;
+    }
+    .social a {
+        padding: 5%;
+    }
+    .social {
+        text-align: center;
+    }
+}
+
+#menu {
+    display: none;
+}
+
+#menu:checked~.mainnav {
+    left: 0;
+}
